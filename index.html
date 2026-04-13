@@ -1,896 +1,552 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ═══════════════════════════════════════════
-     SEO & SOCIAL
-═══════════════════════════════════════════ -->
-<title>SE Global — Brand Experience Strategist | Benin City, Nigeria</title>
-<meta name="description" content="SE Global builds brand strategy, AI systems, and academic research infrastructure. Language as strategy — Benin City, Nigeria.">
-<meta name="author" content="Steven Eghobamien">
-<meta name="theme-color" content="#C9A96E">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://seportfolio-three.vercel.app">
-<meta property="og:title" content="SE Global — Brand Experience Strategist">
-<meta property="og:description" content="Brand Strategy. AI Systems. Academic Research. Language as strategy — Benin City, Nigeria.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SE Global — Brand Experience Strategist">
-<meta name="twitter:description" content="Brand Strategy. AI Systems. Academic Research.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
-
-<!-- Favicon — inline SVG -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23C9A96E'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='400' fill='%23090909'>S</text></svg>">
-
-<!-- Fonts -->
+<title>S.E. Global — Language as Strategy</title>
+<meta name="description" content="S.E. Global — Clarity Infrastructure for Builders, Brands & Systems. Benin City, Nigeria.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Vercel Analytics -->
-<script defer src="/_vercel/insights/script.js"></script>
-
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════
-   CONTACT CONFIG — EDIT HERE ONLY
-   wa / email / backup
-═══════════════════════════════════════ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ═══════════════════════════════════════
-   THEME TOKENS
-═══════════════════════════════════════ */
-:root {
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --mono:  'DM Mono', 'Courier New', monospace;
-  --gold:        #C9A96E;
-  --gold-hover:  #DFC08A;
-  --gold-dim:    rgba(201,169,110,0.2);
-  --trans: all 0.35s cubic-bezier(.4,0,.2,1);
-}
+  :root {
+    --gold: #C9A96E;
+    --gold-dim: rgba(201,169,110,0.3);
+    --bg: #070809;
+    --bg2: #050607;
+    --surface: #0A0B0E;
+    --border: #161820;
+    --text: #DDD9D0;
+    --text-bright: #F0EDE6;
+    --text-muted: #4A4740;
+    --text-dim: #2A2820;
+  }
 
-[data-theme="dark"] {
-  --bg:       #080909;
-  --bg2:      #060707;
-  --surface:  #0D0E0F;
-  --border:   #1C1E20;
-  --text:     #EAE6DD;
-  --text-sub: #9A9288;
-  --text-dim: #3A3830;
-  --overlay:  rgba(8,9,9,0.72);
-  --shadow:   0 24px 80px rgba(0,0,0,0.5);
-  --img-filter: none;
-}
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'EB Garamond', Georgia, serif; overflow-x: hidden; }
 
-[data-theme="light"] {
-  --bg:       #F6F2EA;
-  --bg2:      #EDE9DF;
-  --surface:  #FDFAF4;
-  --border:   #DDD8CC;
-  --text:     #18160F;
-  --text-sub: #6B6355;
-  --text-dim: #B8B0A0;
-  --overlay:  rgba(246,242,234,0.8);
-  --shadow:   0 24px 80px rgba(0,0,0,0.08);
-  --img-filter: brightness(0.95) contrast(1.02);
-  --gold:        #A8822A;
-  --gold-hover:  #C09840;
-  --gold-dim:    rgba(168,130,42,0.18);
-}
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
 
-/* ═══════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg); color: var(--text);
-  font-family: var(--serif); line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  transition: background 0.4s ease, color 0.4s ease;
-  overflow-x: hidden;
-}
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-a { text-decoration: none; color: inherit; }
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(7,8,9,0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: 'Courier New', monospace;
+    font-size: 10px; letter-spacing: 5px;
+    color: var(--gold); text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    font-family: monospace; font-size: 9px;
+    letter-spacing: 3px; color: var(--text-dim);
+    text-transform: uppercase; text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
 
-/* ═══════════════════════════════════════
-   GRAIN OVERLAY
-═══════════════════════════════════════ */
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 9999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  opacity: 0.5;
-}
+  /* SECTIONS */
+  section { padding: 100px 48px; }
+  .container { max-width: 960px; margin: 0 auto; }
 
-/* ═══════════════════════════════════════
-   NAV
-═══════════════════════════════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  padding: 20px 40px;
-  display: flex; justify-content: space-between; align-items: center;
-  transition: var(--trans);
-  border-bottom: 1px solid transparent;
-}
-nav.scrolled {
-  background: var(--bg);
-  border-bottom-color: var(--border);
-  backdrop-filter: blur(12px);
-}
-.nav-brand {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: 5px; color: var(--gold);
-  text-transform: uppercase; font-weight: 400;
-}
-.nav-right { display: flex; align-items: center; gap: 24px; }
-.nav-links { display: flex; gap: 28px; }
-.nav-links a {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; color: var(--text-dim);
-  text-transform: uppercase;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--gold); }
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 140px 48px 100px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(201,169,110,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,169,110,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .hero-glow {
+    position: absolute; top: 25%; left: 55%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,169,110,0.055) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 900px; }
+  .eyebrow {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+  .eyebrow-text {
+    font-family: monospace; font-size: 9px;
+    letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(48px, 9vw, 92px);
+    font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.03em; color: var(--text-bright);
+    margin-bottom: 16px;
+    animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s both;
+  }
+  .hero-sub {
+    font-size: clamp(18px, 2.5vw, 28px);
+    color: var(--text-muted); font-style: italic;
+    letter-spacing: -0.01em; margin-bottom: 56px;
+    animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+  }
+  .hero-stats {
+    display: flex; gap: 56px; flex-wrap: wrap;
+    animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.35s both;
+  }
+  .stat-num { font-size: 40px; color: var(--gold); font-weight: 400; line-height: 1; }
+  .stat-label {
+    font-family: monospace; font-size: 8px;
+    letter-spacing: 3px; color: var(--text-dim);
+    text-transform: uppercase; margin-top: 6px;
+  }
+  .scroll-hint {
+    position: absolute; bottom: 44px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column;
+    align-items: center; gap: 8px;
+    animation: fadeUp 1s ease 1.2s both;
+  }
+  .scroll-hint span {
+    font-family: monospace; font-size: 7px;
+    letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px; height: 44px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
 
-/* Theme toggle */
-.theme-toggle {
-  width: 36px; height: 20px;
-  background: var(--border);
-  border-radius: 10px; border: none;
-  cursor: pointer; position: relative;
-  transition: background .3s;
-  flex-shrink: 0;
-}
-.theme-toggle::after {
-  content: '';
-  position: absolute; top: 3px; left: 3px;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--gold);
-  transition: transform .3s cubic-bezier(.4,0,.2,1);
-}
-[data-theme="light"] .theme-toggle::after { transform: translateX(16px); }
+  /* SECTION LABEL */
+  .section-label {
+    display: flex; align-items: center; gap: 20px;
+    margin-bottom: 40px;
+  }
+  .section-label span {
+    font-family: monospace; font-size: 9px;
+    letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-label-line { flex: 1; height: 1px; background: var(--border); }
 
-.nav-wa {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; text-transform: uppercase;
-  color: var(--bg); background: var(--gold);
-  padding: 10px 20px; transition: background .2s;
-  white-space: nowrap;
-}
-.nav-wa:hover { background: var(--gold-hover); }
+  /* WORK */
+  #work { background: var(--bg); }
+  .project-list { display: flex; flex-direction: column; gap: 2px; }
+  .project-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 24px; align-items: start;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+  .project-item:hover { background: #0D0F14; border-color: var(--gold-dim); }
+  .proj-num {
+    font-family: monospace; font-size: 10px;
+    letter-spacing: 2px; color: var(--text-dim);
+    transition: color 0.3s;
+  }
+  .project-item:hover .proj-num { color: var(--gold); }
+  .proj-cat {
+    font-family: monospace; font-size: 8px;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 8px; opacity: 0.5; transition: opacity 0.3s;
+  }
+  .project-item:hover .proj-cat { opacity: 1; }
+  .proj-title {
+    font-size: 18px; color: #E8E4DC;
+    letter-spacing: -0.01em; margin-bottom: 10px;
+  }
+  .proj-desc { font-size: 13px; color: var(--text-muted); line-height: 1.75; max-width: 520px; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; max-width: 160px; }
+  .tag {
+    font-family: monospace; font-size: 7px;
+    letter-spacing: 1.5px; color: #3A3830;
+    border: 1px solid #1E2028; padding: 3px 8px;
+    text-transform: uppercase; transition: all 0.3s;
+  }
+  .project-item:hover .tag { border-color: var(--gold-dim); }
 
-/* ═══════════════════════════════════════
-   HERO
-═══════════════════════════════════════ */
-#hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 0;
-  position: relative; overflow: hidden;
-}
-.hero-left {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 160px 64px 100px 40px;
-  position: relative; z-index: 2;
-}
-.hero-right {
-  position: relative; overflow: hidden;
-}
-.hero-right::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, var(--bg) 0%, transparent 40%);
-  z-index: 1;
-}
-.hero-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: var(--img-filter);
-  opacity: 0.6;
-  transition: opacity .4s ease;
-}
-[data-theme="light"] .hero-img { opacity: 0.45; }
+  /* SERVICES */
+  #services { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 36px 28px;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+  .service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); }
+  .service-num {
+    font-family: monospace; font-size: 8px;
+    letter-spacing: 3px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .service-title { font-size: 16px; color: var(--text); margin-bottom: 12px; letter-spacing: -0.01em; }
+  .service-desc { font-size: 12px; color: #3A3830; line-height: 1.75; }
 
-.eyebrow {
-  display: inline-flex; align-items: center;
-  gap: 14px; margin-bottom: 32px;
-}
-.eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
-.eyebrow-text {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
-}
-h1 {
-  font-size: clamp(52px, 7vw, 96px);
-  font-weight: 300; line-height: 1.0;
-  letter-spacing: -.04em; color: var(--text);
-  margin-bottom: 8px;
-}
-.hero-rule {
-  width: 56px; height: 1px;
-  background: var(--gold); margin: 20px 0 24px;
-}
-.hero-sub {
-  font-size: clamp(16px, 1.8vw, 20px);
-  color: var(--text-sub); font-style: italic;
-  font-weight: 300; max-width: 480px; margin-bottom: 52px;
-  line-height: 1.75;
-}
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  /* ABOUT */
+  #about { background: var(--bg); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+  .about-headline {
+    font-size: clamp(22px, 3vw, 30px);
+    color: var(--text-bright); line-height: 1.4;
+    letter-spacing: -0.02em; margin-bottom: 24px;
+  }
+  .about-headline em { color: var(--text-muted); }
+  .about-body { font-size: 14px; color: var(--text-muted); line-height: 1.9; }
+  .detail-row {
+    display: flex; padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 24px; align-items: baseline;
+  }
+  .detail-label {
+    font-family: monospace; font-size: 8px;
+    letter-spacing: 3px; color: var(--text-dim);
+    text-transform: uppercase; min-width: 80px;
+  }
+  .detail-val { font-size: 12px; color: #6A6760; }
 
-/* Scroll indicator */
-.scroll-hint {
-  position: absolute; bottom: 40px; left: 40px;
-  display: flex; align-items: center; gap: 12px;
-  z-index: 2;
-}
-.scroll-hint span {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase;
-}
-.scroll-line {
-  width: 40px; height: 1px;
-  background: linear-gradient(to right, var(--gold), transparent);
-}
+  /* CTA */
+  #cta {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 100px 48px;
+  }
+  .cta-headline {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 400; letter-spacing: -0.02em;
+    color: var(--text-bright); margin-bottom: 16px;
+  }
+  .cta-sub {
+    font-size: 15px; color: var(--text-muted);
+    font-style: italic; margin-bottom: 48px;
+  }
+  .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    font-family: monospace; font-size: 9px;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 14px 32px; text-decoration: none;
+    transition: all 0.3s ease; cursor: pointer;
+    border: none; display: inline-block;
+  }
+  .btn-primary {
+    background: var(--gold); color: #070809;
+  }
+  .btn-primary:hover { background: #E0BF82; }
+  .btn-secondary {
+    background: transparent; color: var(--gold);
+    border: 1px solid var(--gold-dim);
+  }
+  .btn-secondary:hover { border-color: var(--gold); background: rgba(201,169,110,0.05); }
 
-/* ═══════════════════════════════════════
-   BUTTONS
-═══════════════════════════════════════ */
-.btn {
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 3px; text-transform: uppercase;
-  padding: 15px 28px; display: inline-block;
-  transition: var(--trans); cursor: pointer; border: none;
-}
-.btn-solid { background: var(--gold); color: var(--bg); }
-.btn-solid:hover { background: var(--gold-hover); }
-.btn-outline { border: 1px solid var(--gold-dim); color: var(--gold); }
-.btn-outline:hover { border-color: var(--gold); background: var(--gold-dim); }
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 48px;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy {
+    font-family: monospace; font-size: 8px;
+    letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase;
+  }
+  .footer-loc {
+    font-style: italic; font-size: 12px; color: var(--text-dim);
+  }
 
-/* ═══════════════════════════════════════
-   SECTION SCAFFOLDING
-═══════════════════════════════════════ */
-.wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
-.sec { padding: 120px 0; }
-.sec-alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-.sec-label {
-  display: flex; align-items: center; gap: 20px; margin-bottom: 20px;
-}
-.sec-label span {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
-  white-space: nowrap;
-}
-.sec-label-line { flex: 1; height: 1px; background: var(--border); }
-.sec-title {
-  font-size: clamp(28px, 4vw, 46px); font-weight: 300;
-  letter-spacing: -.025em; color: var(--text); margin-bottom: 48px;
-  line-height: 1.15;
-}
-
-/* ═══════════════════════════════════════
-   SERVICES
-═══════════════════════════════════════ */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.service-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: var(--trans);
-  position: relative;
-}
-.service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: var(--shadow); }
-.service-img-wrap {
-  height: 200px; overflow: hidden; position: relative;
-}
-.service-img-wrap img {
-  transition: transform .6s ease;
-  filter: var(--img-filter);
-}
-.service-card:hover .service-img-wrap img { transform: scale(1.05); }
-.service-img-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, var(--surface));
-}
-.service-body { padding: 28px 26px 32px; }
-.service-num {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; color: var(--gold); margin-bottom: 14px;
-}
-.service-card h3 {
-  font-size: 20px; font-weight: 400; color: var(--text);
-  margin-bottom: 10px; letter-spacing: -.01em; line-height: 1.3;
-}
-.service-card p { font-size: 14px; color: var(--text-sub); line-height: 1.8; }
-.service-link {
-  display: inline-block; margin-top: 20px;
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 2px; color: var(--gold);
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--gold-dim); padding-bottom: 2px;
-  transition: border-color .2s;
-}
-.service-link:hover { border-color: var(--gold); }
-
-/* ═══════════════════════════════════════
-   ABOUT / PROOF
-═══════════════════════════════════════ */
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
-}
-.about-img-wrap {
-  position: relative; height: 520px; overflow: hidden;
-}
-.about-img-wrap img { filter: var(--img-filter); }
-.about-img-wrap::before {
-  content: '';
-  position: absolute; inset: -1px;
-  border: 1px solid var(--gold-dim); z-index: 1;
-  pointer-events: none;
-}
-.about-img-wrap::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  z-index: 2;
-}
-.about-quote {
-  font-size: clamp(22px, 2.8vw, 32px); font-weight: 300;
-  font-style: italic; color: var(--text); line-height: 1.4;
-  letter-spacing: -.02em; margin-bottom: 28px;
-}
-.about-quote em { color: var(--gold); font-style: normal; }
-.about-bio {
-  font-size: 14px; color: var(--text-sub);
-  line-height: 1.9; margin-bottom: 36px;
-}
-.stats-row {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
-}
-.stat {
-  background: var(--surface); border: 1px solid var(--border);
-  padding: 22px 20px;
-}
-.stat-n {
-  font-size: 32px; color: var(--gold);
-  font-weight: 300; line-height: 1;
-}
-.stat-l {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 3px; color: var(--text-sub);
-  text-transform: uppercase; margin-top: 5px;
-}
-
-/* ═══════════════════════════════════════
-   WORK / PROJECTS
-═══════════════════════════════════════ */
-.projects-list { display: flex; flex-direction: column; gap: 2px; }
-.project-row {
-  display: grid; grid-template-columns: 56px 280px 1fr auto;
-  gap: 32px; align-items: center;
-  background: var(--surface); border: 1px solid var(--border);
-  padding: 28px 32px; transition: var(--trans); cursor: default;
-}
-.project-row:hover { border-color: var(--gold-dim); background: var(--bg2); }
-.project-row:hover .proj-num { color: var(--gold); }
-.proj-num {
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 2px; color: var(--text-dim); transition: color .3s;
-}
-.proj-cat {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; text-transform: uppercase;
-  margin-bottom: 5px; opacity: 0.6;
-}
-.proj-name { font-size: 17px; color: var(--text); letter-spacing: -.01em; }
-.proj-desc { font-size: 13px; color: var(--text-sub); line-height: 1.75; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
-.tag {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 1.5px; color: var(--text-dim);
-  border: 1px solid var(--border); padding: 3px 8px;
-  text-transform: uppercase; transition: var(--trans);
-}
-.project-row:hover .tag { border-color: var(--gold-dim); color: var(--text-sub); }
-
-/* ═══════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════ */
-#contact { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); }
-.contact-inner { max-width: 640px; margin: 0 auto; padding: 0 40px; text-align: center; }
-.contact-inner h2 {
-  font-size: clamp(32px, 5vw, 56px); font-weight: 300;
-  letter-spacing: -.03em; color: var(--text); margin: 16px 0 12px; line-height: 1.1;
-}
-.contact-inner > p {
-  font-size: 16px; color: var(--text-sub);
-  font-style: italic; margin-bottom: 44px; line-height: 1.75;
-}
-.wa-btn {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
-  text-transform: uppercase; background: var(--gold); color: var(--bg);
-  padding: 18px 36px; transition: background .2s;
-}
-.wa-btn:hover { background: var(--gold-hover); }
-.wa-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-.or-divider {
-  font-family: var(--mono); font-size: 8px; letter-spacing: 4px;
-  color: var(--text-dim); text-transform: uppercase; margin: 20px 0;
-}
-.email-cta {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
-  color: var(--text-sub); transition: color .2s;
-  border-bottom: 1px solid var(--border); padding-bottom: 2px;
-}
-.email-cta:hover { color: var(--gold); border-color: var(--gold-dim); }
-
-/* FORM */
-.lead-form {
-  margin-top: 56px; text-align: left;
-  border-top: 1px solid var(--border); padding-top: 48px;
-}
-.lead-form h3 {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 4px;
-  color: var(--gold); text-transform: uppercase; margin-bottom: 28px;
-}
-.field { margin-bottom: 12px; }
-.field input, .field select, .field textarea {
-  width: 100%; background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text); font-family: var(--serif);
-  font-size: 15px; padding: 13px 16px;
-  outline: none; transition: border-color .2s;
-  resize: none; appearance: none; -webkit-appearance: none;
-}
-.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold-dim); }
-.field input::placeholder, .field textarea::placeholder { color: var(--text-dim); }
-.field select { color: var(--text); cursor: pointer; }
-.field select option { background: var(--surface); }
-.form-note {
-  font-family: var(--mono); font-size: 7px; letter-spacing: 2px;
-  color: var(--text-dim); text-transform: uppercase; margin-bottom: 14px;
-}
-.submit-btn {
-  width: 100%; font-family: var(--mono); font-size: 9px;
-  letter-spacing: 3px; text-transform: uppercase;
-  background: var(--gold); color: var(--bg);
-  border: none; padding: 16px; cursor: pointer; transition: background .2s;
-}
-.submit-btn:hover { background: var(--gold-hover); }
-#form-success {
-  display: none; margin-top: 14px; text-align: center;
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 2px; color: var(--gold); text-transform: uppercase;
-}
-#wa-followup { display: none; margin-top: 20px; text-align: center; }
-
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 40px;
-}
-.foot-inner {
-  max-width: 1000px; margin: 0 auto;
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 14px;
-}
-.foot-copy {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase;
-}
-.foot-email {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 2px; color: var(--text-dim); transition: color .2s;
-}
-.foot-email:hover { color: var(--text-sub); }
-
-/* ═══════════════════════════════════════
-   REVEAL ANIMATIONS
-═══════════════════════════════════════ */
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1);
-}
-.reveal.on { opacity: 1; transform: none; }
-.reveal-left {
-  opacity: 0; transform: translateX(-28px);
-  transition: opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1);
-}
-.reveal-left.on { opacity: 1; transform: none; }
-
-/* ═══════════════════════════════════════
-   HERO ENTRANCE ANIMATIONS
-═══════════════════════════════════════ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: none; }
-}
-.hero-left .eyebrow  { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .1s both; }
-.hero-left h1        { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .2s both; }
-.hero-rule           { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .3s both; }
-.hero-left .hero-sub { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .35s both; }
-.hero-actions        { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
-.scroll-hint         { animation: fadeUp 1s ease 1.2s both; }
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
-@media (max-width: 960px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .services-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-img-wrap { height: 320px; }
-  .project-row { grid-template-columns: 48px 1fr; }
-  .proj-tags { display: none; }
-  .proj-desc { display: none; }
-}
-@media (max-width: 640px) {
-  nav { padding: 14px 20px; }
-  .nav-links { display: none; }
-  .hero-left { padding: 130px 20px 80px; }
-  .wrap { padding: 0 20px; }
-  .sec { padding: 80px 0; }
-  footer { padding: 24px 20px; }
-  .foot-inner { flex-direction: column; text-align: center; }
-  .contact-inner { padding: 0 20px; }
-  .stats-row { grid-template-columns: 1fr 1fr; }
-  .project-row { padding: 22px 20px; gap: 16px; }
-}
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    nav { padding: 16px 24px; }
+    section { padding: 80px 24px; }
+    #hero { padding: 120px 24px 80px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .project-item { grid-template-columns: 40px 1fr; }
+    .proj-tags { display: none; }
+    footer { padding: 28px 24px; }
+    #cta { padding: 80px 24px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     CONTACT CONFIG — EDIT THESE
-═══════════════════════════════════ -->
-<script>
-var C = {
-  wa:     "2348151949334",
-  email:  "steveneghobamien@gmail.com",
-  backup: "steveneghobamien@outlook.com",
-  waMsg:  "Hi Steven, I found SE Global and I'd like to discuss a project."
-};
-</script>
-
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav id="nav">
-  <a class="nav-brand" href="#">SE Global</a>
-  <div class="nav-right">
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Switch theme"></button>
-    <a class="nav-wa" id="nav-wa" href="#">WhatsApp →</a>
+  <a class="nav-logo" href="#">S.E. Global</a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#cta">Contact</a>
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section id="hero">
-  <div class="hero-left">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
     <div class="eyebrow">
       <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Benin City, Nigeria</span>
+      <span class="eyebrow-text">Language as Strategy</span>
     </div>
-    <h1>SE<br>Global</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">Brand Strategy. AI Systems. Academic Research. Language is not how we describe strategy — it is the strategy.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" id="hero-wa" href="#">Start on WhatsApp</a>
-      <a class="btn btn-outline" href="#contact">Send a Message</a>
+    <h1>S.E. Global</h1>
+    <p class="hero-sub">Clarity Infrastructure for Builders, Brands & Systems.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Core Verticals</div>
+      </div>
+      <div>
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Live Products</div>
+      </div>
+      <div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Systems Built</div>
+      </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85&auto=format&fit=crop" alt="SE Global — strategic workspace" loading="eager">
   </div>
   <div class="scroll-hint">
-    <div class="scroll-line"></div>
     <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- ═══ SERVICES ═══ -->
-<section id="services" class="sec sec-alt">
-  <div class="wrap">
-    <div class="sec-label reveal">
-      <span>What We Do</span>
-      <div class="sec-label-line"></div>
-    </div>
-    <h2 class="sec-title reveal">Three ways<br><em style="color:var(--gold);font-style:normal;">to work together.</em></h2>
-
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80&auto=format&fit=crop" alt="Brand Strategy" loading="lazy">
-          <div class="service-img-overlay"></div>
-        </div>
-        <div class="service-body">
-          <div class="service-num">01</div>
-          <h3>Brand Strategy & Identity</h3>
-          <p>Positioning, naming, messaging architecture. For brands that need to mean something — not just look good.</p>
-          <a class="service-link" data-wa-service="Brand Strategy" href="#">Start here →</a>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80&auto=format&fit=crop" alt="AI Systems" loading="lazy">
-          <div class="service-img-overlay"></div>
-        </div>
-        <div class="service-body">
-          <div class="service-num">02</div>
-          <h3>AI Systems Setup</h3>
-          <p>Multi-AI relay architecture and workflow infrastructure for founders who want to operate faster with less.</p>
-          <a class="service-link" data-wa-service="AI Systems Setup" href="#">Start here →</a>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80&auto=format&fit=crop" alt="Academic Research" loading="lazy">
-          <div class="service-img-overlay"></div>
-        </div>
-        <div class="service-body">
-          <div class="service-num">03</div>
-          <h3>Academic Research Assistance</h3>
-          <p>Research design, structured writing, and academic output. Built on a linguistics foundation from the University of Benin.</p>
-          <a class="service-link" data-wa-service="Academic Research" href="#">Start here →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ABOUT ═══ -->
-<section id="about" class="sec">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-img-wrap reveal-left">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200581399c4?w=700&q=85&auto=format&fit=crop" alt="SE Global — The Architect" loading="lazy">
-      </div>
-      <div class="reveal">
-        <div class="sec-label" style="margin-bottom:16px;">
-          <span>About</span>
-          <div class="sec-label-line"></div>
-        </div>
-        <div class="about-quote">
-          "Language is not how we describe strategy.<br>
-          <em>It is the strategy.</em>"
-        </div>
-        <p class="about-bio">Steven Eghobamien is the founder of SE Global — a linguistics-trained brand strategist and systems architect operating out of Benin City, Nigeria. He built SE Global from a university research-writing service into a three-arm operation spanning brand identity, AI infrastructure, and academic research — unified by one discipline: clarity through language.</p>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Live Products</div></div>
-          <div class="stat"><div class="stat-n">5</div><div class="stat-l">AI Tools Orchestrated</div></div>
-          <div class="stat"><div class="stat-n">443+</div><div class="stat-l">CBT Questions Built</div></div>
-          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Core Verticals</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WORK ═══ -->
-<section id="work" class="sec sec-alt">
-  <div class="wrap">
-    <div class="sec-label reveal">
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-label reveal">
       <span>Selected Work</span>
-      <div class="sec-label-line"></div>
+      <div class="section-label-line"></div>
     </div>
-    <h2 class="sec-title reveal">The work.</h2>
-    <div class="projects-list">
+    <div class="project-list">
 
-      <div class="project-row reveal">
+      <div class="project-item reveal">
         <div class="proj-num">01</div>
         <div>
-          <div class="proj-cat" style="color:#C9A96E;">Systems Architecture</div>
-          <div class="proj-name">Communication Execution System</div>
+          <div class="proj-cat" style="color:#C9A96E">Systems Architecture</div>
+          <div class="proj-title">Communication Execution System</div>
+          <div class="proj-desc">Production-grade AI execution architecture eliminating interpretation variance. Brief Engine, Lifespan Engine, Constraint Dial, Ship Mode v2.</div>
         </div>
-        <div class="proj-desc">Production-grade AI execution architecture eliminating interpretation variance. Brief Engine, Lifespan Engine, Ship Mode v2.</div>
-        <div class="proj-tags"><span class="tag">AI Infrastructure</span><span class="tag">Workflow</span><span class="tag">IP</span></div>
+        <div class="proj-tags">
+          <span class="tag">AI Infrastructure</span>
+          <span class="tag">Workflow Design</span>
+          <span class="tag">Sellable IP</span>
+        </div>
       </div>
 
-      <div class="project-row reveal">
+      <div class="project-item reveal">
         <div class="proj-num">02</div>
         <div>
-          <div class="proj-cat" style="color:#7EB8A4;">Product Development</div>
-          <div class="proj-name">Scrutiny CBT</div>
+          <div class="proj-cat" style="color:#7EB8A4">Product Development</div>
+          <div class="proj-title">Scrutiny CBT</div>
+          <div class="proj-desc">React/Vite JAMB practice platform with 443+ generated questions across 11 subjects. Frontend-only, deployed on Vercel with modular component architecture.</div>
         </div>
-        <div class="proj-desc">React/Vite JAMB practice platform. 443+ questions, 11 subjects, deployed on Vercel.</div>
-        <div class="proj-tags"><span class="tag">React</span><span class="tag">EdTech</span><span class="tag">Vercel</span></div>
+        <div class="proj-tags">
+          <span class="tag">React</span>
+          <span class="tag">Vite</span>
+          <span class="tag">EdTech</span>
+          <span class="tag">Vercel</span>
+        </div>
       </div>
 
-      <div class="project-row reveal">
+      <div class="project-item reveal">
         <div class="proj-num">03</div>
         <div>
-          <div class="proj-cat" style="color:#A78BFA;">Creative IP</div>
-          <div class="proj-name">Quantum Mirror System</div>
+          <div class="proj-cat" style="color:#A78BFA">Creative IP</div>
+          <div class="proj-title">Quantum Mirror System</div>
+          <div class="proj-desc">Clarity infrastructure for high-output minds. 12-section premium PDF, five-glyph state system. Three-phase launch: PDF → Notion template → workshop.</div>
         </div>
-        <div class="proj-desc">Clarity infrastructure for high-output minds. 12-section premium PDF, five-glyph state system.</div>
-        <div class="proj-tags"><span class="tag">Digital Product</span><span class="tag">PDF</span></div>
+        <div class="proj-tags">
+          <span class="tag">Digital Product</span>
+          <span class="tag">Premium PDF</span>
+          <span class="tag">Monetization</span>
+        </div>
       </div>
 
-      <div class="project-row reveal">
+      <div class="project-item reveal">
         <div class="proj-num">04</div>
         <div>
-          <div class="proj-cat" style="color:#F59E0B;">Artist Development</div>
-          <div class="proj-name">NIDAE Development Suite</div>
+          <div class="proj-cat" style="color:#F59E0B">Artist Development</div>
+          <div class="proj-title">NIDAE Development Suite</div>
+          <div class="proj-desc">Full artist management infrastructure — agreements, KPI Command Centre React app, 4-week release campaign, content strategy framework, production documents.</div>
         </div>
-        <div class="proj-desc">Full artist management infrastructure — agreements, KPI app, 4-week campaign, content framework.</div>
-        <div class="proj-tags"><span class="tag">Artist Mgmt</span><span class="tag">React</span></div>
+        <div class="proj-tags">
+          <span class="tag">Artist Mgmt</span>
+          <span class="tag">React App</span>
+          <span class="tag">Campaign</span>
+        </div>
       </div>
 
-      <div class="project-row reveal">
+      <div class="project-item reveal">
         <div class="proj-num">05</div>
         <div>
-          <div class="proj-cat" style="color:#F87171;">Publishing</div>
-          <div class="proj-name">The Pattern Behind God</div>
+          <div class="proj-cat" style="color:#60A5FA">Creative IP</div>
+          <div class="proj-title">Master Shinobi</div>
+          <div class="proj-desc">TikTok motion comic series with multi-AI production workflow. ChatGPT prompts → Gemini image generation → Claude assembly. Episode 1 complete.</div>
         </div>
-        <div class="proj-desc">Multi-version manuscript integrating linguistics, Edo cosmology, and philosophy. Amazon KDP-ready.</div>
-        <div class="proj-tags"><span class="tag">Book</span><span class="tag">KDP</span></div>
+        <div class="proj-tags">
+          <span class="tag">Motion Comic</span>
+          <span class="tag">TikTok</span>
+          <span class="tag">Multi-AI</span>
+        </div>
+      </div>
+
+      <div class="project-item reveal">
+        <div class="proj-num">06</div>
+        <div>
+          <div class="proj-cat" style="color:#F87171">Publishing</div>
+          <div class="proj-title">The Pattern Behind God</div>
+          <div class="proj-desc">Multi-version book manuscript integrating linguistics, Edo cosmology, Nigerian Christianity critique, and philosophy. Amazon KDP-ready.</div>
+        </div>
+        <div class="proj-tags">
+          <span class="tag">Book</span>
+          <span class="tag">Linguistics</span>
+          <span class="tag">KDP</span>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="eyebrow" style="justify-content:center;">
-      <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Get In Touch</span>
-      <div class="eyebrow-line"></div>
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label reveal">
+      <span>Services</span>
+      <div class="section-label-line"></div>
     </div>
-    <h2>Ready to build<br>something?</h2>
-    <p>WhatsApp gets the fastest response. Or leave a message below and expect a reply within 24 hours.</p>
-
-    <a class="wa-btn" id="contact-wa" href="#">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Contact on WhatsApp
-    </a>
-    <div class="or-divider">or email directly</div>
-    <a class="email-cta" id="contact-email" href="#">steveneghobamien@gmail.com</a>
-
-    <div class="lead-form reveal">
-      <h3>Leave a Message</h3>
-      <form id="lead-form" action="https://formspree.io/f/mbdqrwnw" method="POST">
-        <input type="hidden" name="_subject" value="New SE Global Lead">
-        <div class="field"><input type="text" name="name" id="f-name" placeholder="Your name" required autocomplete="name"></div>
-        <div class="field"><input type="email" name="email" id="f-email" placeholder="Your email" required autocomplete="email"></div>
-        <div class="field">
-          <select name="service" id="f-service" required>
-            <option value="" disabled selected>Select a service</option>
-            <option value="Brand Strategy">Brand Strategy & Identity</option>
-            <option value="AI Systems Setup">AI Systems Setup</option>
-            <option value="Academic Research">Academic Research Assistance</option>
-            <option value="Other">Other / Not Sure Yet</option>
-          </select>
-        </div>
-        <div class="field"><textarea name="message" id="f-message" rows="4" placeholder="Tell me about your project" required></textarea></div>
-        <p class="form-note">After submitting, a WhatsApp continuation link will appear.</p>
-        <button class="submit-btn" type="submit">Send Message →</button>
-      </form>
-      <div id="form-success">✓ Sent — open your WhatsApp link to continue.</div>
-      <div id="wa-followup">
-        <a id="wa-followup-link" class="wa-btn" href="#">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Continue on WhatsApp
-        </a>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-title">Branding & Design</div>
+        <div class="service-desc">Identity systems, positioning assets, visual strategy for brands that need to mean something.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-title">AI Workflow Consulting</div>
+        <div class="service-desc">Multi-AI relay architecture, execution system design, quota optimization, workflow infrastructure.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-title">Systems Architecture</div>
+        <div class="service-desc">Production-grade workflows, automation design, digital infrastructure for solo operators and small teams.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-title">Creative IP</div>
+        <div class="service-desc">Digital products, content frameworks, monetizable assets built for long-term leverage.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label reveal">
+      <span>About</span>
+      <div class="section-label-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-headline">
+          Built by a linguist.<br>
+          <em>Operated by an architect.</em>
+        </div>
+        <p class="about-body">
+          S.E. Global was founded by Sir Steven Eghobamien — The Architect — out of
+          the University of Benin ecosystem. What started as a research-writing
+          service evolved into a three-arm operation: service delivery, systems
+          architecture, and creative IP. The unifying mission is clarity.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="detail-row"><span class="detail-label">Foundation</span><span class="detail-val">Linguistics · University of Benin</span></div>
+        <div class="detail-row"><span class="detail-label">Operator</span><span class="detail-val">Sir Steven Eghobamien · The Architect</span></div>
+        <div class="detail-row"><span class="detail-label">Location</span><span class="detail-val">Benin City, Nigeria</span></div>
+        <div class="detail-row"><span class="detail-label">AI Stack</span><span class="detail-val">Claude · ChatGPT · Gemini · Perplexity · DeepSeek</span></div>
+        <div class="detail-row"><span class="detail-label">Model</span><span class="detail-val">Layer 00 Human Orchestrator</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="cta-headline">Let's build something clear.</h2>
+      <p class="cta-sub">Reach out to start a project or explore what S.E. Global can do for your brand.</p>
+      <div class="cta-buttons">
+        <a href="mailto:hello@seglobal.com" class="btn btn-primary">Get in Touch</a>
+        <a href="https://selar.co" target="_blank" class="btn btn-secondary">Shop Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
-    <span class="foot-copy">SE Global · Language as Strategy · © 2026</span>
-    <a class="foot-email" id="footer-email" href="#">steveneghobamien@outlook.com</a>
-  </div>
+  <span class="footer-copy">S.E. Global · Language as Strategy · © 2026</span>
+  <span class="footer-loc">Benin City, Nigeria</span>
 </footer>
 
-<!-- ═══════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════ -->
 <script>
-(function(){
-  // ── Contact links ──
-  var baseWA = "https://wa.me/" + C.wa + "?text=";
-  function wa(msg){ return baseWA + encodeURIComponent(msg); }
-
-  document.getElementById('nav-wa').href      = wa(C.waMsg);
-  document.getElementById('hero-wa').href     = wa(C.waMsg);
-  document.getElementById('contact-wa').href  = wa(C.waMsg);
-  document.getElementById('contact-email').href = "mailto:" + C.email;
-  document.getElementById('footer-email').href  = "mailto:" + C.backup;
-
-  document.querySelectorAll('[data-wa-service]').forEach(function(el){
-    var s = el.getAttribute('data-wa-service');
-    el.href = wa("Hi Steven, I'm interested in " + s + " from SE Global.");
-  });
-
-  // ── Nav scroll ──
-  var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function(){
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // ── Theme toggle ──
-  var html = document.documentElement;
-  var saved = localStorage.getItem('se-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-
-  document.getElementById('theme-toggle').addEventListener('click', function(){
-    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('se-theme', next);
-  });
-
-  // ── Scroll reveal ──
-  var reveals = document.querySelectorAll('.reveal, .reveal-left');
-  var ro = new IntersectionObserver(function(entries){
-    entries.forEach(function(e, i){
-      if(e.isIntersecting){
-        setTimeout(function(){ e.target.classList.add('on'); }, i * 90);
-        ro.unobserve(e.target);
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.07 });
-  reveals.forEach(function(el){ ro.observe(el); });
-
-  // ── Form AJAX + WhatsApp bridge ──
-  var form = document.getElementById('lead-form');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var name    = document.getElementById('f-name').value.trim();
-    var email   = document.getElementById('f-email').value.trim();
-    var service = document.getElementById('f-service').value;
-    var message = document.getElementById('f-message').value.trim();
-
-    fetch(form.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email, service: service, message: message })
-    }).then(function(res){
-      if(res.ok){
-        form.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-        var txt = "Hi Steven, I just messaged via SE Global.\n\nName: " + name + "\nEmail: " + email + "\nService: " + service + "\n\nMessage: " + message;
-        document.getElementById('wa-followup-link').href = wa(txt);
-        document.getElementById('wa-followup').style.display = 'block';
-      } else {
-        alert('Something went wrong. Email ' + C.email + ' directly.');
-      }
-    }).catch(function(){
-      alert('Network error. Email ' + C.email + ' directly.');
-    });
-  });
-})();
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
