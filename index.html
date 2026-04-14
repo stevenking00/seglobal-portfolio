@@ -1,896 +1,536 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SE Global – Language as Strategy</title>
+  <meta name="description" content="Brand strategy, AI systems, and academic research for founders who need language to work like code. Solo strategist in Benin City, Nigeria.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<!-- ═══════════════════════════════════════════
-     SEO & SOCIAL
-═══════════════════════════════════════════ -->
-<title>SE Global — Brand Experience Strategist | Benin City, Nigeria</title>
-<meta name="description" content="SE Global builds brand strategy, AI systems, and academic research infrastructure. Language as strategy — Benin City, Nigeria.">
-<meta name="author" content="Steven Eghobamien">
-<meta name="theme-color" content="#C9A96E">
+    :root {
+      --bg: #fefefe;
+      --text: #1a1a1a;
+      --card-bg: #f5f5f5;
+      --border: #e0e0e0;
+      --accent: #2c7a4d;
+      --accent-hover: #1e5936;
+      --btn-secondary-border: #2c7a4d;
+    }
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://seportfolio-three.vercel.app">
-<meta property="og:title" content="SE Global — Brand Experience Strategist">
-<meta property="og:description" content="Brand Strategy. AI Systems. Academic Research. Language as strategy — Benin City, Nigeria.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
+    body.dark {
+      --bg: #0f0f0f;
+      --text: #ffffff;
+      --card-bg: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #2c7a4d;
+      --accent-hover: #3e9e62;
+      --btn-secondary-border: #2c7a4d;
+    }
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SE Global — Brand Experience Strategist">
-<meta name="twitter:description" content="Brand Strategy. AI Systems. Academic Research.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.5;
+      transition: background-color 0.2s, color 0.2s;
+    }
 
-<!-- Favicon — inline SVG -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23C9A96E'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='400' fill='%23090909'>S</text></svg>">
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    /* New header styles */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-<!-- Vercel Analytics -->
-<script defer src="/_vercel/insights/script.js"></script>
+    #logo-slot {
+      width: 120px;
+      height: 40px;
+      /* Placeholder for future logo image or text */
+      background: transparent;
+    }
 
-<style>
-/* ═══════════════════════════════════════
-   CONTACT CONFIG — EDIT HERE ONLY
-   wa / email / backup
-═══════════════════════════════════════ */
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
 
-/* ═══════════════════════════════════════
-   THEME TOKENS
-═══════════════════════════════════════ */
-:root {
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --mono:  'DM Mono', 'Courier New', monospace;
-  --gold:        #C9A96E;
-  --gold-hover:  #DFC08A;
-  --gold-dim:    rgba(201,169,110,0.2);
-  --trans: all 0.35s cubic-bezier(.4,0,.2,1);
-}
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
 
-[data-theme="dark"] {
-  --bg:       #080909;
-  --bg2:      #060707;
-  --surface:  #0D0E0F;
-  --border:   #1C1E20;
-  --text:     #EAE6DD;
-  --text-sub: #9A9288;
-  --text-dim: #3A3830;
-  --overlay:  rgba(8,9,9,0.72);
-  --shadow:   0 24px 80px rgba(0,0,0,0.5);
-  --img-filter: none;
-}
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
 
-[data-theme="light"] {
-  --bg:       #F6F2EA;
-  --bg2:      #EDE9DF;
-  --surface:  #FDFAF4;
-  --border:   #DDD8CC;
-  --text:     #18160F;
-  --text-sub: #6B6355;
-  --text-dim: #B8B0A0;
-  --overlay:  rgba(246,242,234,0.8);
-  --shadow:   0 24px 80px rgba(0,0,0,0.08);
-  --img-filter: brightness(0.95) contrast(1.02);
-  --gold:        #A8822A;
-  --gold-hover:  #C09840;
-  --gold-dim:    rgba(168,130,42,0.18);
-}
+    @media (max-width: 600px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
 
-/* ═══════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg); color: var(--text);
-  font-family: var(--serif); line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  transition: background 0.4s ease, color 0.4s ease;
-  overflow-x: hidden;
-}
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-a { text-decoration: none; color: inherit; }
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); }
+    section {
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3rem;
+    }
 
-/* ═══════════════════════════════════════
-   GRAIN OVERLAY
-═══════════════════════════════════════ */
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 9999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  opacity: 0.5;
-}
+    section:last-child {
+      border-bottom: none;
+    }
 
-/* ═══════════════════════════════════════
-   NAV
-═══════════════════════════════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  padding: 20px 40px;
-  display: flex; justify-content: space-between; align-items: center;
-  transition: var(--trans);
-  border-bottom: 1px solid transparent;
-}
-nav.scrolled {
-  background: var(--bg);
-  border-bottom-color: var(--border);
-  backdrop-filter: blur(12px);
-}
-.nav-brand {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: 5px; color: var(--gold);
-  text-transform: uppercase; font-weight: 400;
-}
-.nav-right { display: flex; align-items: center; gap: 24px; }
-.nav-links { display: flex; gap: 28px; }
-.nav-links a {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; color: var(--text-dim);
-  text-transform: uppercase;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--gold); }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
 
-/* Theme toggle */
-.theme-toggle {
-  width: 36px; height: 20px;
-  background: var(--border);
-  border-radius: 10px; border: none;
-  cursor: pointer; position: relative;
-  transition: background .3s;
-  flex-shrink: 0;
-}
-.theme-toggle::after {
-  content: '';
-  position: absolute; top: 3px; left: 3px;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--gold);
-  transition: transform .3s cubic-bezier(.4,0,.2,1);
-}
-[data-theme="light"] .theme-toggle::after { transform: translateX(16px); }
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+    }
 
-.nav-wa {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; text-transform: uppercase;
-  color: var(--bg); background: var(--gold);
-  padding: 10px 20px; transition: background .2s;
-  white-space: nowrap;
-}
-.nav-wa:hover { background: var(--gold-hover); }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+    }
 
-/* ═══════════════════════════════════════
-   HERO
-═══════════════════════════════════════ */
-#hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 0;
-  position: relative; overflow: hidden;
-}
-.hero-left {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 160px 64px 100px 40px;
-  position: relative; z-index: 2;
-}
-.hero-right {
-  position: relative; overflow: hidden;
-}
-.hero-right::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, var(--bg) 0%, transparent 40%);
-  z-index: 1;
-}
-.hero-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: var(--img-filter);
-  opacity: 0.6;
-  transition: opacity .4s ease;
-}
-[data-theme="light"] .hero-img { opacity: 0.45; }
+    .hero {
+      text-align: left;
+    }
 
-.eyebrow {
-  display: inline-flex; align-items: center;
-  gap: 14px; margin-bottom: 32px;
-}
-.eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
-.eyebrow-text {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
-}
-h1 {
-  font-size: clamp(52px, 7vw, 96px);
-  font-weight: 300; line-height: 1.0;
-  letter-spacing: -.04em; color: var(--text);
-  margin-bottom: 8px;
-}
-.hero-rule {
-  width: 56px; height: 1px;
-  background: var(--gold); margin: 20px 0 24px;
-}
-.hero-sub {
-  font-size: clamp(16px, 1.8vw, 20px);
-  color: var(--text-sub); font-style: italic;
-  font-weight: 300; max-width: 480px; margin-bottom: 52px;
-  line-height: 1.75;
-}
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      opacity: 0.9;
+    }
 
-/* Scroll indicator */
-.scroll-hint {
-  position: absolute; bottom: 40px; left: 40px;
-  display: flex; align-items: center; gap: 12px;
-  z-index: 2;
-}
-.scroll-hint span {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase;
-}
-.scroll-line {
-  width: 40px; height: 1px;
-  background: linear-gradient(to right, var(--gold), transparent);
-}
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
 
-/* ═══════════════════════════════════════
-   BUTTONS
-═══════════════════════════════════════ */
-.btn {
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 3px; text-transform: uppercase;
-  padding: 15px 28px; display: inline-block;
-  transition: var(--trans); cursor: pointer; border: none;
-}
-.btn-solid { background: var(--gold); color: var(--bg); }
-.btn-solid:hover { background: var(--gold-hover); }
-.btn-outline { border: 1px solid var(--gold-dim); color: var(--gold); }
-.btn-outline:hover { border-color: var(--gold); background: var(--gold-dim); }
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
 
-/* ═══════════════════════════════════════
-   SECTION SCAFFOLDING
-═══════════════════════════════════════ */
-.wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
-.sec { padding: 120px 0; }
-.sec-alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
 
-.sec-label {
-  display: flex; align-items: center; gap: 20px; margin-bottom: 20px;
-}
-.sec-label span {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
-  white-space: nowrap;
-}
-.sec-label-line { flex: 1; height: 1px; background: var(--border); }
-.sec-title {
-  font-size: clamp(28px, 4vw, 46px); font-weight: 300;
-  letter-spacing: -.025em; color: var(--text); margin-bottom: 48px;
-  line-height: 1.15;
-}
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--btn-secondary-border);
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
 
-/* ═══════════════════════════════════════
-   SERVICES
-═══════════════════════════════════════ */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.service-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: var(--trans);
-  position: relative;
-}
-.service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: var(--shadow); }
-.service-img-wrap {
-  height: 200px; overflow: hidden; position: relative;
-}
-.service-img-wrap img {
-  transition: transform .6s ease;
-  filter: var(--img-filter);
-}
-.service-card:hover .service-img-wrap img { transform: scale(1.05); }
-.service-img-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, var(--surface));
-}
-.service-body { padding: 28px 26px 32px; }
-.service-num {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; color: var(--gold); margin-bottom: 14px;
-}
-.service-card h3 {
-  font-size: 20px; font-weight: 400; color: var(--text);
-  margin-bottom: 10px; letter-spacing: -.01em; line-height: 1.3;
-}
-.service-card p { font-size: 14px; color: var(--text-sub); line-height: 1.8; }
-.service-link {
-  display: inline-block; margin-top: 20px;
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 2px; color: var(--gold);
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--gold-dim); padding-bottom: 2px;
-  transition: border-color .2s;
-}
-.service-link:hover { border-color: var(--gold); }
+    .btn-secondary:hover {
+      background-color: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
 
-/* ═══════════════════════════════════════
-   ABOUT / PROOF
-═══════════════════════════════════════ */
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
-}
-.about-img-wrap {
-  position: relative; height: 520px; overflow: hidden;
-}
-.about-img-wrap img { filter: var(--img-filter); }
-.about-img-wrap::before {
-  content: '';
-  position: absolute; inset: -1px;
-  border: 1px solid var(--gold-dim); z-index: 1;
-  pointer-events: none;
-}
-.about-img-wrap::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  z-index: 2;
-}
-.about-quote {
-  font-size: clamp(22px, 2.8vw, 32px); font-weight: 300;
-  font-style: italic; color: var(--text); line-height: 1.4;
-  letter-spacing: -.02em; margin-bottom: 28px;
-}
-.about-quote em { color: var(--gold); font-style: normal; }
-.about-bio {
-  font-size: 14px; color: var(--text-sub);
-  line-height: 1.9; margin-bottom: 36px;
-}
-.stats-row {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
-}
-.stat {
-  background: var(--surface); border: 1px solid var(--border);
-  padding: 22px 20px;
-}
-.stat-n {
-  font-size: 32px; color: var(--gold);
-  font-weight: 300; line-height: 1;
-}
-.stat-l {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 3px; color: var(--text-sub);
-  text-transform: uppercase; margin-top: 5px;
-}
+    .dark-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: transform 0.1s;
+    }
 
-/* ═══════════════════════════════════════
-   WORK / PROJECTS
-═══════════════════════════════════════ */
-.projects-list { display: flex; flex-direction: column; gap: 2px; }
-.project-row {
-  display: grid; grid-template-columns: 56px 280px 1fr auto;
-  gap: 32px; align-items: center;
-  background: var(--surface); border: 1px solid var(--border);
-  padding: 28px 32px; transition: var(--trans); cursor: default;
-}
-.project-row:hover { border-color: var(--gold-dim); background: var(--bg2); }
-.project-row:hover .proj-num { color: var(--gold); }
-.proj-num {
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 2px; color: var(--text-dim); transition: color .3s;
-}
-.proj-cat {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 3px; text-transform: uppercase;
-  margin-bottom: 5px; opacity: 0.6;
-}
-.proj-name { font-size: 17px; color: var(--text); letter-spacing: -.01em; }
-.proj-desc { font-size: 13px; color: var(--text-sub); line-height: 1.75; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
-.tag {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 1.5px; color: var(--text-dim);
-  border: 1px solid var(--border); padding: 3px 8px;
-  text-transform: uppercase; transition: var(--trans);
-}
-.project-row:hover .tag { border-color: var(--gold-dim); color: var(--text-sub); }
+    .dark-toggle:hover {
+      transform: scale(1.05);
+    }
 
-/* ═══════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════ */
-#contact { padding: 120px 0; background: var(--bg2); border-top: 1px solid var(--border); }
-.contact-inner { max-width: 640px; margin: 0 auto; padding: 0 40px; text-align: center; }
-.contact-inner h2 {
-  font-size: clamp(32px, 5vw, 56px); font-weight: 300;
-  letter-spacing: -.03em; color: var(--text); margin: 16px 0 12px; line-height: 1.1;
-}
-.contact-inner > p {
-  font-size: 16px; color: var(--text-sub);
-  font-style: italic; margin-bottom: 44px; line-height: 1.75;
-}
-.wa-btn {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
-  text-transform: uppercase; background: var(--gold); color: var(--bg);
-  padding: 18px 36px; transition: background .2s;
-}
-.wa-btn:hover { background: var(--gold-hover); }
-.wa-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-.or-divider {
-  font-family: var(--mono); font-size: 8px; letter-spacing: 4px;
-  color: var(--text-dim); text-transform: uppercase; margin: 20px 0;
-}
-.email-cta {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
-  color: var(--text-sub); transition: color .2s;
-  border-bottom: 1px solid var(--border); padding-bottom: 2px;
-}
-.email-cta:hover { color: var(--gold); border-color: var(--gold-dim); }
+    .numbers-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 24px;
+      margin: 1.5rem 0;
+    }
 
-/* FORM */
-.lead-form {
-  margin-top: 56px; text-align: left;
-  border-top: 1px solid var(--border); padding-top: 48px;
-}
-.lead-form h3 {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 4px;
-  color: var(--gold); text-transform: uppercase; margin-bottom: 28px;
-}
-.field { margin-bottom: 12px; }
-.field input, .field select, .field textarea {
-  width: 100%; background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text); font-family: var(--serif);
-  font-size: 15px; padding: 13px 16px;
-  outline: none; transition: border-color .2s;
-  resize: none; appearance: none; -webkit-appearance: none;
-}
-.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold-dim); }
-.field input::placeholder, .field textarea::placeholder { color: var(--text-dim); }
-.field select { color: var(--text); cursor: pointer; }
-.field select option { background: var(--surface); }
-.form-note {
-  font-family: var(--mono); font-size: 7px; letter-spacing: 2px;
-  color: var(--text-dim); text-transform: uppercase; margin-bottom: 14px;
-}
-.submit-btn {
-  width: 100%; font-family: var(--mono); font-size: 9px;
-  letter-spacing: 3px; text-transform: uppercase;
-  background: var(--gold); color: var(--bg);
-  border: none; padding: 16px; cursor: pointer; transition: background .2s;
-}
-.submit-btn:hover { background: var(--gold-hover); }
-#form-success {
-  display: none; margin-top: 14px; text-align: center;
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 2px; color: var(--gold); text-transform: uppercase;
-}
-#wa-followup { display: none; margin-top: 20px; text-align: center; }
+    .number-item {
+      flex: 1;
+      text-align: center;
+    }
 
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 40px;
-}
-.foot-inner {
-  max-width: 1000px; margin: 0 auto;
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 14px;
-}
-.foot-copy {
-  font-family: var(--mono); font-size: 7px;
-  letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase;
-}
-.foot-email {
-  font-family: var(--mono); font-size: 8px;
-  letter-spacing: 2px; color: var(--text-dim); transition: color .2s;
-}
-.foot-email:hover { color: var(--text-sub); }
+    .number-item strong {
+      font-size: 2rem;
+      display: block;
+      color: var(--accent);
+    }
 
-/* ═══════════════════════════════════════
-   REVEAL ANIMATIONS
-═══════════════════════════════════════ */
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1);
-}
-.reveal.on { opacity: 1; transform: none; }
-.reveal-left {
-  opacity: 0; transform: translateX(-28px);
-  transition: opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1);
-}
-.reveal-left.on { opacity: 1; transform: none; }
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
 
-/* ═══════════════════════════════════════
-   HERO ENTRANCE ANIMATIONS
-═══════════════════════════════════════ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: none; }
-}
-.hero-left .eyebrow  { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .1s both; }
-.hero-left h1        { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .2s both; }
-.hero-rule           { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .3s both; }
-.hero-left .hero-sub { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .35s both; }
-.hero-actions        { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
-.scroll-hint         { animation: fadeUp 1s ease 1.2s both; }
+    .system-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
-@media (max-width: 960px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .services-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-img-wrap { height: 320px; }
-  .project-row { grid-template-columns: 48px 1fr; }
-  .proj-tags { display: none; }
-  .proj-desc { display: none; }
-}
-@media (max-width: 640px) {
-  nav { padding: 14px 20px; }
-  .nav-links { display: none; }
-  .hero-left { padding: 130px 20px 80px; }
-  .wrap { padding: 0 20px; }
-  .sec { padding: 80px 0; }
-  footer { padding: 24px 20px; }
-  .foot-inner { flex-direction: column; text-align: center; }
-  .contact-inner { padding: 0 20px; }
-  .stats-row { grid-template-columns: 1fr 1fr; }
-  .project-row { padding: 22px 20px; gap: 16px; }
-}
-</style>
+    .work-item {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .product-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 1rem 0;
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .path-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .path-card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      .container { padding: 1rem; }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- HEADER (logo slot + nav) added as first child -->
+    <header class="site-header">
+      <div id="logo-slot"></div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#academy">Academy</a>
+        <a href="#products">Products</a>
+      </nav>
+    </header>
 
-<!-- ═══════════════════════════════════
-     CONTACT CONFIG — EDIT THESE
-═══════════════════════════════════ -->
-<script>
-var C = {
-  wa:     "2348151949334",
-  email:  "steveneghobamien@gmail.com",
-  backup: "steveneghobamien@outlook.com",
-  waMsg:  "Hi Steven, I found SE Global and I'd like to discuss a project."
-};
-</script>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Brand strategy, AI systems, and academic research for founders who need language to work like code.</h1>
+      <p>You get clarity, workflows, and research structure. No agency. No retainers. Just a solo strategist in Benin City, Nigeria.</p>
+      <div class="btn-group">
+        <a href="#start-here" class="btn-primary">Build my system →</a>
+        <a href="#work" class="btn-secondary">View work</a>
+      </div>
+    </section>
 
-<!-- ═══ NAV ═══ -->
-<nav id="nav">
-  <a class="nav-brand" href="#">SE Global</a>
-  <div class="nav-right">
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Switch theme"></button>
-    <a class="nav-wa" id="nav-wa" href="#">WhatsApp →</a>
+    <!-- AUTHORITY PROOF -->
+    <section>
+      <h2>System not agency</h2>
+      <div class="numbers-bar">
+        <div class="number-item"><strong>4+ years</strong><span> solo</span></div>
+        <div class="number-item"><strong>20+ projects</strong><span> delivered</span></div>
+        <div class="number-item"><strong>3 continents</strong><span> clients</span></div>
+        <div class="number-item"><strong>100% direct</strong><span> access</span></div>
+      </div>
+    </section>
+
+    <!-- START FROM WHERE YOU ARE -->
+    <section id="start-here">
+      <h2>Start from where you are</h2>
+      <div class="path-grid">
+        <div class="path-card">
+          <h3>Build Systems</h3>
+          <p>Custom brand, AI, or research systems for your work.</p>
+          <a href="#services" class="btn-primary">Build my system →</a>
+        </div>
+        <div class="path-card">
+          <h3>Learn Execution</h3>
+          <p>Self-serve skills to implement language as strategy.</p>
+          <a href="#academy" class="btn-primary">Learn this skill →</a>
+        </div>
+        <div class="path-card">
+          <h3>Buy Solutions</h3>
+          <p>Ready-to-use prompt packs and visual systems.</p>
+          <a href="#products" class="btn-primary">Get the product →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Build Systems – Services</h2>
+      <div class="system-grid">
+        <div class="system-card">
+          <h3>Brand Strategy</h3>
+          <p>Language as infrastructure. Voice rules, messaging hierarchy, one-page guide. No guesswork.</p>
+          <a href="#conversion-services" class="btn-secondary">Work with SE Global →</a>
+        </div>
+        <div class="system-card">
+          <h3>AI Systems</h3>
+          <p>Custom prompt library. Workflow documentation. Quality checklist. Stop wasting time on bad outputs.</p>
+          <a href="#conversion-services" class="btn-secondary">Work with SE Global →</a>
+        </div>
+        <div class="system-card">
+          <h3>Academic Research</h3>
+          <p>Literature synthesis. Abstract rewriting. AI-assisted structuring. Finish chapters faster.</p>
+          <a href="#conversion-services" class="btn-secondary">Work with SE Global →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMY (placeholder) -->
+    <section id="academy">
+      <h2>Learn Execution – SE Global Academy</h2>
+      <div class="system-grid">
+        <div class="system-card">
+          <h3>Coming soon</h3>
+          <p>Courses and workshops on language systems, AI workflows, and research structuring.</p>
+          <a href="#" class="btn-secondary" id="academy-notify">Notify me →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+      <h2>Buy Solutions – Ready-to-use products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <h3>Prompt Pack</h3>
+          <p>20 reusable prompts for brand messaging, content, and research.</p>
+          <div class="product-price">$49 / ₦75,000</div>
+          <a href="#" class="btn-primary buy-btn" data-product="Prompt Pack">Get the product →</a>
+        </div>
+        <div class="product-card">
+          <h3>AI Visuals System</h3>
+          <p>Prompt library + workflow for generating consistent brand visuals.</p>
+          <div class="product-price">$249 / ₦380,000</div>
+          <a href="#" class="btn-primary buy-btn" data-product="AI Visuals System">Get the product →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK SHOWCASE -->
+    <section id="work">
+      <h2>Work showcase</h2>
+      <div class="work-item">
+        <strong>Fintech brand repositioning</strong><br>
+        Problem: Inconsistent investor + customer messaging. → Action: Two-tier framework, rewritten deck and onboarding. → Outcome: Clearer conversations, less confusion.
+      </div>
+      <div class="work-item">
+        <strong>Solo consultant AI workflow</strong><br>
+        Problem: 5h per newsletter, inconsistent voice. → Action: 12 custom prompts, 90-min workflow. → Outcome: Newsletter time cut to 2h, consistent tone.
+      </div>
+      <div class="work-item">
+        <strong>PhD literature review</strong><br>
+        Problem: 80+ sources, no synthesis. → Action: Thematic clustering, 6-page summary, AI prompt set. → Outcome: Draft in 10 days instead of 4 weeks.
+      </div>
+    </section>
+
+    <!-- CONVERSION for Services -->
+    <section id="conversion-services">
+      <h2>Work with SE Global – Custom build</h2>
+      <div class="product-card" style="max-width: 400px; margin: 0 auto;">
+        <h3>Custom Build</h3>
+        <p>Full brand strategy or AI system built for your specific work.</p>
+        <div class="product-price">$1,200+ / ₦1,800,000+</div>
+        <a href="#" class="btn-primary buy-btn" data-product="Custom Build">Work with SE Global →</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      SE Global – Benin City, Nigeria<br>
+      WhatsApp: <a href="#" id="whatsapp-link-footer">08151949334</a> | 
+      Email: <a href="mailto:steveneghobamien@gmail.com">steveneghobamien@gmail.com</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/steven-eghobamien-2a84b7403" target="_blank" rel="noopener">Steven Eghobamien</a><br>
+      Language as strategy.
+    </footer>
   </div>
-</nav>
 
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="eyebrow">
-      <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Benin City, Nigeria</span>
-    </div>
-    <h1>SE<br>Global</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">Brand Strategy. AI Systems. Academic Research. Language is not how we describe strategy — it is the strategy.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" id="hero-wa" href="#">Start on WhatsApp</a>
-      <a class="btn btn-outline" href="#contact">Send a Message</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85&auto=format&fit=crop" alt="SE Global — strategic workspace" loading="eager">
-  </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
-</section>
+  <!-- Dark mode toggle -->
+  <button class="dark-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌓</button>
 
-<!-- ═══ SERVICES ═══ -->
-<section id="services" class="sec sec-alt">
-  <div class="wrap">
-    <div class="sec-label reveal">
-      <span>What We Do</span>
-      <div class="sec-label-line"></div>
-    </div>
-    <h2 class="sec-title reveal">Three ways<br><em style="color:var(--gold);font-style:normal;">to work together.</em></h2>
+  <script>
+    // Dark mode
+    const toggle = document.getElementById('darkModeToggle');
+    const body = document.body;
 
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80&auto=format&fit=crop" alt="Brand Strategy" loading="lazy">
-          <div class="service-img-overlay"></div>
-        </div>
-        <div class="service-body">
-          <div class="service-num">01</div>
-          <h3>Brand Strategy & Identity</h3>
-          <p>Positioning, naming, messaging architecture. For brands that need to mean something — not just look good.</p>
-          <a class="service-link" data-wa-service="Brand Strategy" href="#">Start here →</a>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80&auto=format&fit=crop" alt="AI Systems" loading="lazy">
-          <div class="service-img-overlay"></div>
-        </div>
-        <div class="service-body">
-          <div class="service-num">02</div>
-          <h3>AI Systems Setup</h3>
-          <p>Multi-AI relay architecture and workflow infrastructure for founders who want to operate faster with less.</p>
-          <a class="service-link" data-wa-service="AI Systems Setup" href="#">Start here →</a>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80&auto=format&fit=crop" alt="Academic Research" loading="lazy">
-          <div class="service-img-overlay"></div>
-        </div>
-        <div class="service-body">
-          <div class="service-num">03</div>
-          <h3>Academic Research Assistance</h3>
-          <p>Research design, structured writing, and academic output. Built on a linguistics foundation from the University of Benin.</p>
-          <a class="service-link" data-wa-service="Academic Research" href="#">Start here →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ABOUT ═══ -->
-<section id="about" class="sec">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-img-wrap reveal-left">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200581399c4?w=700&q=85&auto=format&fit=crop" alt="SE Global — The Architect" loading="lazy">
-      </div>
-      <div class="reveal">
-        <div class="sec-label" style="margin-bottom:16px;">
-          <span>About</span>
-          <div class="sec-label-line"></div>
-        </div>
-        <div class="about-quote">
-          "Language is not how we describe strategy.<br>
-          <em>It is the strategy.</em>"
-        </div>
-        <p class="about-bio">Steven Eghobamien is the founder of SE Global — a linguistics-trained brand strategist and systems architect operating out of Benin City, Nigeria. He built SE Global from a university research-writing service into a three-arm operation spanning brand identity, AI infrastructure, and academic research — unified by one discipline: clarity through language.</p>
-        <div class="stats-row">
-          <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Live Products</div></div>
-          <div class="stat"><div class="stat-n">5</div><div class="stat-l">AI Tools Orchestrated</div></div>
-          <div class="stat"><div class="stat-n">443+</div><div class="stat-l">CBT Questions Built</div></div>
-          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Core Verticals</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WORK ═══ -->
-<section id="work" class="sec sec-alt">
-  <div class="wrap">
-    <div class="sec-label reveal">
-      <span>Selected Work</span>
-      <div class="sec-label-line"></div>
-    </div>
-    <h2 class="sec-title reveal">The work.</h2>
-    <div class="projects-list">
-
-      <div class="project-row reveal">
-        <div class="proj-num">01</div>
-        <div>
-          <div class="proj-cat" style="color:#C9A96E;">Systems Architecture</div>
-          <div class="proj-name">Communication Execution System</div>
-        </div>
-        <div class="proj-desc">Production-grade AI execution architecture eliminating interpretation variance. Brief Engine, Lifespan Engine, Ship Mode v2.</div>
-        <div class="proj-tags"><span class="tag">AI Infrastructure</span><span class="tag">Workflow</span><span class="tag">IP</span></div>
-      </div>
-
-      <div class="project-row reveal">
-        <div class="proj-num">02</div>
-        <div>
-          <div class="proj-cat" style="color:#7EB8A4;">Product Development</div>
-          <div class="proj-name">Scrutiny CBT</div>
-        </div>
-        <div class="proj-desc">React/Vite JAMB practice platform. 443+ questions, 11 subjects, deployed on Vercel.</div>
-        <div class="proj-tags"><span class="tag">React</span><span class="tag">EdTech</span><span class="tag">Vercel</span></div>
-      </div>
-
-      <div class="project-row reveal">
-        <div class="proj-num">03</div>
-        <div>
-          <div class="proj-cat" style="color:#A78BFA;">Creative IP</div>
-          <div class="proj-name">Quantum Mirror System</div>
-        </div>
-        <div class="proj-desc">Clarity infrastructure for high-output minds. 12-section premium PDF, five-glyph state system.</div>
-        <div class="proj-tags"><span class="tag">Digital Product</span><span class="tag">PDF</span></div>
-      </div>
-
-      <div class="project-row reveal">
-        <div class="proj-num">04</div>
-        <div>
-          <div class="proj-cat" style="color:#F59E0B;">Artist Development</div>
-          <div class="proj-name">NIDAE Development Suite</div>
-        </div>
-        <div class="proj-desc">Full artist management infrastructure — agreements, KPI app, 4-week campaign, content framework.</div>
-        <div class="proj-tags"><span class="tag">Artist Mgmt</span><span class="tag">React</span></div>
-      </div>
-
-      <div class="project-row reveal">
-        <div class="proj-num">05</div>
-        <div>
-          <div class="proj-cat" style="color:#F87171;">Publishing</div>
-          <div class="proj-name">The Pattern Behind God</div>
-        </div>
-        <div class="proj-desc">Multi-version manuscript integrating linguistics, Edo cosmology, and philosophy. Amazon KDP-ready.</div>
-        <div class="proj-tags"><span class="tag">Book</span><span class="tag">KDP</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="eyebrow" style="justify-content:center;">
-      <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Get In Touch</span>
-      <div class="eyebrow-line"></div>
-    </div>
-    <h2>Ready to build<br>something?</h2>
-    <p>WhatsApp gets the fastest response. Or leave a message below and expect a reply within 24 hours.</p>
-
-    <a class="wa-btn" id="contact-wa" href="#">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Contact on WhatsApp
-    </a>
-    <div class="or-divider">or email directly</div>
-    <a class="email-cta" id="contact-email" href="#">steveneghobamien@gmail.com</a>
-
-    <div class="lead-form reveal">
-      <h3>Leave a Message</h3>
-      <form id="lead-form" action="https://formspree.io/f/mbdqrwnw" method="POST">
-        <input type="hidden" name="_subject" value="New SE Global Lead">
-        <div class="field"><input type="text" name="name" id="f-name" placeholder="Your name" required autocomplete="name"></div>
-        <div class="field"><input type="email" name="email" id="f-email" placeholder="Your email" required autocomplete="email"></div>
-        <div class="field">
-          <select name="service" id="f-service" required>
-            <option value="" disabled selected>Select a service</option>
-            <option value="Brand Strategy">Brand Strategy & Identity</option>
-            <option value="AI Systems Setup">AI Systems Setup</option>
-            <option value="Academic Research">Academic Research Assistance</option>
-            <option value="Other">Other / Not Sure Yet</option>
-          </select>
-        </div>
-        <div class="field"><textarea name="message" id="f-message" rows="4" placeholder="Tell me about your project" required></textarea></div>
-        <p class="form-note">After submitting, a WhatsApp continuation link will appear.</p>
-        <button class="submit-btn" type="submit">Send Message →</button>
-      </form>
-      <div id="form-success">✓ Sent — open your WhatsApp link to continue.</div>
-      <div id="wa-followup">
-        <a id="wa-followup-link" class="wa-btn" href="#">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Continue on WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="foot-inner">
-    <span class="foot-copy">SE Global · Language as Strategy · © 2026</span>
-    <a class="foot-email" id="footer-email" href="#">steveneghobamien@outlook.com</a>
-  </div>
-</footer>
-
-<!-- ═══════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════ -->
-<script>
-(function(){
-  // ── Contact links ──
-  var baseWA = "https://wa.me/" + C.wa + "?text=";
-  function wa(msg){ return baseWA + encodeURIComponent(msg); }
-
-  document.getElementById('nav-wa').href      = wa(C.waMsg);
-  document.getElementById('hero-wa').href     = wa(C.waMsg);
-  document.getElementById('contact-wa').href  = wa(C.waMsg);
-  document.getElementById('contact-email').href = "mailto:" + C.email;
-  document.getElementById('footer-email').href  = "mailto:" + C.backup;
-
-  document.querySelectorAll('[data-wa-service]').forEach(function(el){
-    var s = el.getAttribute('data-wa-service');
-    el.href = wa("Hi Steven, I'm interested in " + s + " from SE Global.");
-  });
-
-  // ── Nav scroll ──
-  var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function(){
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // ── Theme toggle ──
-  var html = document.documentElement;
-  var saved = localStorage.getItem('se-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-
-  document.getElementById('theme-toggle').addEventListener('click', function(){
-    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('se-theme', next);
-  });
-
-  // ── Scroll reveal ──
-  var reveals = document.querySelectorAll('.reveal, .reveal-left');
-  var ro = new IntersectionObserver(function(entries){
-    entries.forEach(function(e, i){
-      if(e.isIntersecting){
-        setTimeout(function(){ e.target.classList.add('on'); }, i * 90);
-        ro.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.07 });
-  reveals.forEach(function(el){ ro.observe(el); });
-
-  // ── Form AJAX + WhatsApp bridge ──
-  var form = document.getElementById('lead-form');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var name    = document.getElementById('f-name').value.trim();
-    var email   = document.getElementById('f-email').value.trim();
-    var service = document.getElementById('f-service').value;
-    var message = document.getElementById('f-message').value.trim();
-
-    fetch(form.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email, service: service, message: message })
-    }).then(function(res){
-      if(res.ok){
-        form.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-        var txt = "Hi Steven, I just messaged via SE Global.\n\nName: " + name + "\nEmail: " + email + "\nService: " + service + "\n\nMessage: " + message;
-        document.getElementById('wa-followup-link').href = wa(txt);
-        document.getElementById('wa-followup').style.display = 'block';
+    function setDarkMode(isDark) {
+      if (isDark) {
+        body.classList.add('dark');
+        localStorage.setItem('darkMode', 'enabled');
       } else {
-        alert('Something went wrong. Email ' + C.email + ' directly.');
+        body.classList.remove('dark');
+        localStorage.setItem('darkMode', 'disabled');
       }
-    }).catch(function(){
-      alert('Network error. Email ' + C.email + ' directly.');
-    });
-  });
-})();
-</script>
+    }
 
+    const saved = localStorage.getItem('darkMode');
+    if (saved === 'enabled') {
+      body.classList.add('dark');
+    } else if (saved === 'disabled') {
+      body.classList.remove('dark');
+    } else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setDarkMode(true);
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark');
+      setDarkMode(!isDark);
+    });
+
+    // WhatsApp integration
+    const YOUR_WHATSAPP_NUMBER = '2348151949334';
+
+    function sendWhatsApp(productName) {
+      let message = '';
+      if (productName === 'Prompt Pack') {
+        message = 'Hi. I want the Prompt Pack. Send payment link.';
+      } else if (productName === 'AI Visuals System') {
+        message = 'Hi. I want the AI Visuals System. Send payment link.';
+      } else if (productName === 'Custom Build') {
+        message = 'Hi. I want a Custom Build. Let\'s discuss scope and price.';
+      } else {
+        message = 'Hi. I\'m interested in your services.';
+      }
+      const encoded = encodeURIComponent(message);
+      const url = `https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encoded}`;
+      window.open(url, '_blank');
+    }
+
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    buyButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const product = btn.getAttribute('data-product');
+        sendWhatsApp(product);
+      });
+    });
+
+    const footerLink = document.getElementById('whatsapp-link-footer');
+    if (footerLink) {
+      footerLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        sendWhatsApp('');
+      });
+      footerLink.href = '#';
+    }
+
+    const academyBtn = document.getElementById('academy-notify');
+    if (academyBtn) {
+      academyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Notify me when SE Global Academy launches. (Placeholder – email capture will be added in Batch 3)');
+      });
+    }
+  </script>
 </body>
 </html>
