@@ -1,3 +1,6 @@
+Here is the final HTML with your Selar product link (`https://selar.com/7zzb401535`) inserted into the **Prompt Pack** button. The AI Visual System Kit button is updated to a placeholder Selar link (you can replace it with your actual second product link later).
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -444,6 +447,7 @@
   <section id="products">
     <h2>Products – Structured Systems</h2>
     <div class="product-grid">
+      <!-- ENTRY PRODUCT: Prompt Pack -->
       <div class="product-card">
         <h3>Prompt Pack System</h3>
         <p>A structured set of prompts for brand messaging, content creation, and research workflows. Built for fast execution.</p>
@@ -453,8 +457,10 @@
           <li>Instant workflow activation</li>
         </ul>
         <div class="product-price">$49 / ₦75,000</div>
-        <a class="btn-primary" href="https://selar.co" target="_blank">Buy Product →</a>
+        <!-- YOUR ACTUAL SELAR LINK -->
+        <a class="btn-primary" href="https://selar.com/7zzb401535" target="_blank">Buy Product →</a>
       </div>
+      <!-- CORE PRODUCT: AI Visual System Kit (placeholder link) -->
       <div class="product-card">
         <h3>AI Visual System Kit</h3>
         <p>A structured system for generating consistent AI visuals for brands and content pipelines.</p>
@@ -464,7 +470,8 @@
           <li>Workflow templates</li>
         </ul>
         <div class="product-price">$249 / ₦380,000</div>
-        <a class="btn-primary" href="https://selar.co" target="_blank">Buy Product →</a>
+        <!-- Replace with your actual Selar link when ready -->
+        <a class="btn-primary" href="https://selar.co/your-second-product-id" target="_blank">Buy Product →</a>
       </div>
     </div>
   </section>
@@ -571,22 +578,47 @@
     setDarkMode(!isDark);
   });
 
-  // Lead capture function
-  function submitLead() {
+  // Lead capture function (connected to Google Sheet)
+  async function submitLead() {
     const name = document.getElementById('lead-name').value.trim();
     const email = document.getElementById('lead-email').value.trim();
+    const btn = document.querySelector("#lead-capture .btn-primary");
 
     if (!name || !email) {
       alert("Please fill all fields");
       return;
     }
 
-    console.log("NEW LEAD (S.E. Global):", { name, email });
+    btn.innerText = "Sending...";
+    btn.disabled = true;
 
-    alert("You are on the S.E. Global system waitlist. We'll notify you when Academy launches.");
+    try {
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwq87m4UrPC3VQnKERVMs1sUNgCt70fHBey4uwSP3ZzEG7nhKQu3pClgavtqGfDq8w/exec";
 
-    document.getElementById('lead-name').value = '';
-    document.getElementById('lead-email').value = '';
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          service: "Academy Waitlist",
+          message: "Joined via website footer",
+          source: "S.E. Global Website"
+        })
+      });
+
+      alert("Success! You are on the S.E. Global system waitlist.");
+      document.getElementById('lead-name').value = '';
+      document.getElementById('lead-email').value = '';
+
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Connection failed. Please try again or contact me via WhatsApp.");
+    } finally {
+      btn.innerText = "Join Waitlist →";
+      btn.disabled = false;
+    }
   }
 
   // Footer WhatsApp fallback
@@ -600,3 +632,13 @@
 </script>
 </body>
 </html>
+```
+
+**What’s ready:**
+- Prompt Pack button points to `https://selar.com/7zzb401535`
+- Lead capture sends to your Google Sheet
+- Dark mode, navigation, all sections fully functional
+
+**One optional action:** Replace the `https://selar.co/your-second-product-id` with your actual AI Visual System Kit Selar link when you create that product.
+
+Deploy and start selling.
